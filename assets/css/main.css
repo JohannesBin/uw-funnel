@@ -8,6 +8,7 @@
     font-family: 'Druk', 'Inter', system-ui, sans-serif;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
   }
   body {
     @apply bg-white text-black;
@@ -16,6 +17,7 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-black tracking-tighter uppercase;
     font-family: 'Druk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
   }
   input, select, textarea {
     -webkit-appearance: none;
@@ -53,9 +55,14 @@
     font-size: 16px; /* Base font size for mobile */
   }
   
-  h1, h2 {
+  h1, h2, h3, h4, h5, h6 {
     font-size: 2.5rem !important; /* Ensure headings are readable */
     line-height: 1.1 !important;
+    letter-spacing: -0.5px !important; /* Fix compressed text on mobile */
+  }
+  
+  .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    letter-spacing: -0.5px !important; /* Prevent squished text */
   }
   
   .container {

@@ -1,9 +1,9 @@
 [build]
-  command = "npm run netlify-build"
+  command = "npm run generate"
   publish = "dist"
   
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "16"
 
 [forms]
   # Specify the forms to be detected by Netlify

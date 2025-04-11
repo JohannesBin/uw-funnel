@@ -53,6 +53,8 @@
 @media (max-width: 768px) {
   body {
     font-size: 16px; /* Base font size for mobile */
+    word-break: break-word; /* Allow word breaks for long words */
+    overflow-wrap: break-word; /* Better handling of long words */
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -60,6 +62,7 @@
     line-height: 1.2 !important;
     letter-spacing: 0.5px !important; /* Keep improved spacing */
     word-spacing: 1px !important;
+    hyphens: auto !important; /* Allow automatic hyphenation */
   }
   
   .text-5xl, .text-6xl, .text-7xl, .text-8xl {
@@ -78,6 +81,14 @@
   
   .text-2xl {
     font-size: 1.2rem !important;
+  }
+  
+  /* Handle long words in all text elements */
+  p, span, h1, h2, h3, h4, h5, h6, div {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-word;
+    word-break: break-word;
   }
   
   .container {

@@ -39,8 +39,8 @@
       </div>
       
       <!-- Investment opportunity -->
-      <div class="border-brutalist p-10 bg-black text-white">
-        <h2 class="text-4xl md:text-5xl mb-6 text-center">INVESTERINGSMULIGHET</h2>
+      <div class="border-brutalist p-10 md:p-10 p-6 bg-black text-white">
+        <h2 class="text-3xl md:text-5xl mb-6 text-center break-words">INVESTERINGS&shy;MULIGHET</h2>
         
         <div class="space-y-6 max-w-3xl mx-auto">
           <p class="text-xl">Ved å investere i UWM Studios får du muligheten til å bli en del av et unikt kreativt kraftsenter i Oslo sentrum - et prosjekt med stort potensial både kreativt og økonomisk.</p>

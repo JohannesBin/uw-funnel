@@ -6,7 +6,7 @@
           <a href="/" class="text-4xl font-black tracking-tighter uppercase">UWM</a>
           
           <nav class="hidden md:flex space-x-8 items-center">
-            <a href="#studios" class="text-lg font-bold uppercase hover:text-gray-600 transition-colors">Studios</a>
+            <a href="#studios" class="text-lg font-bold uppercase hover:text-gray-600 transition-colors">Studioer</a>
             <a href="#contact" class="text-lg font-bold uppercase hover:text-gray-600 transition-colors">Kontakt</a>
             <a href="#contact" class="btn btn-primary py-2 px-6">BLI MED</a>
           </nav>
@@ -25,7 +25,7 @@
     <div v-if="mobileMenuOpen" class="md:hidden border-b-4 border-black bg-white">
       <div class="container py-4">
         <nav class="flex flex-col space-y-4">
-          <a href="#studios" @click="mobileMenuOpen = false" class="text-lg font-bold uppercase hover:text-gray-600 py-2">Studios</a>
+          <a href="#studios" @click="mobileMenuOpen = false" class="text-lg font-bold uppercase hover:text-gray-600 py-2">Studioer</a>
           <a href="#contact" @click="mobileMenuOpen = false" class="text-lg font-bold uppercase hover:text-gray-600 py-2">Kontakt</a>
           <a href="#contact" @click="mobileMenuOpen = false" class="btn btn-primary py-2 justify-center">BLI MED</a>
         </nav>

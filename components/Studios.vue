@@ -5,7 +5,7 @@
       
       <div class="grid-brutalist grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 mb-20">
         <div class="p-10 border-brutalist bg-white">
-          <h3 class="text-4xl md:text-5xl mb-6">PREMIUM STUDIOS</h3>
+          <h3 class="text-4xl md:text-5xl mb-6">PREMIUM STUDIOER</h3>
           <div class="space-y-4 text-xl mb-8">
             <p class="uppercase">HOVEDETASJE</p>
             <p class="uppercase">NATURLIG LYS</p>
@@ -16,7 +16,7 @@
         </div>
         
         <div class="p-10 border-brutalist bg-white">
-          <h3 class="text-4xl md:text-5xl mb-6">STANDARD STUDIOS</h3>
+          <h3 class="text-4xl md:text-5xl mb-6">STANDARD STUDIOER</h3>
           <div class="space-y-4 text-xl mb-8">
             <p class="uppercase">UNDERETASJE</p>
             <p class="uppercase">KOSTNADSEFFEKTIVT</p>

@@ -9,7 +9,7 @@
         
         <div class="flex flex-col md:flex-row gap-10 justify-between mb-16">
           <div class="md:w-2/5">
-            <img src="/bilder/715_2fe7a99f-26f1-45f5-8728-8514bb6a5cb0.jpg.webp" alt="UWM Studios" class="w-full h-auto border-brutalist">
+            <img src="/bilder/715_2fe7a99f-26f1-45f5-8728-8514bb6a5cb0.jpg.webp" alt="UWM Studioer" class="w-full h-auto border-brutalist">
           </div>
           
           <div class="md:w-3/5 space-y-6">
@@ -17,7 +17,7 @@
               <h3 class="text-3xl font-black mb-4">IKKE BARE ET STUDIO</h3>
               <p class="text-xl">
                 UWM blir et fullstendig <span class="font-bold">økosystem for kreative</span> i hjertet av Oslo. 
-                Med førsteklasses faciliteter, isolerte studioer og store fellesområder er dette stedet hvor 
+                Med førsteklasses fasiliteter, isolerte studioer og store fellesområder er dette stedet hvor 
                 kreativitet møter profesjonalitet.
               </p>
             </div>

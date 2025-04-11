@@ -14,11 +14,25 @@
           </p>
         </div>
 
+        <!-- Hidden static HTML form that Netlify can find during build -->
+        <form name="uwm-partner-contact" netlify netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <input type="number" name="squareMeters" />
+          <input type="number" name="budget" />
+          <select name="investmentInterest">
+            <option value="yes">Ja</option>
+            <option value="maybe">Kanskje</option>
+            <option value="no">Nei</option>
+          </select>
+          <textarea name="message"></textarea>
+        </form>
+
+        <!-- Actual form that users interact with -->
         <form 
           name="uwm-partner-contact" 
-          method="POST" 
-          data-netlify="true" 
-          netlify-honeypot="bot-field"
+          method="POST"
           @submit.prevent="handleSubmit" 
           class="space-y-6"
         >
@@ -157,38 +171,26 @@ const form = reactive({
   message: ''
 })
 
-const handleSubmit = async () => {
+const handleSubmit = async (event: Event) => {
   isSubmitting.value = true
   
   try {
-    // Using Netlify Forms - let the native form submission handle it
-    // The form will submit normally and Netlify will capture it
+    const form = event.target as HTMLFormElement
+    const formData = new FormData(form)
     
-    // Create form data
-    const formData = new FormData()
-    formData.append('name', form.name)
-    formData.append('email', form.email)
-    formData.append('phone', form.phone)
-    formData.append('squareMeters', form.squareMeters.toString())
-    formData.append('budget', form.budget.toString())
-    formData.append('investmentInterest', form.investmentInterest)
-    formData.append('message', form.message)
-    
-    // Additional form handling if needed (for SPA functionality)
     await fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData as any).toString()
     })
     
-    // Reset form after successful submission
+    // Reset form values
     Object.keys(form).forEach(key => {
       if (key in form) {
         (form as any)[key] = ''
       }
     })
     
-    // Show success message
     alert('TAKK FOR DIN INTERESSE! VI KONTAKTER DEG SNART.')
   } catch (error) {
     console.error('Error submitting form:', error)

@@ -7,7 +7,8 @@
     "dev": "HOST=0.0.0.0 nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "netlify-build": "npm cache clean --force && npm install && NODE_OPTIONS=--max_old_space_size=4096 nuxt generate"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

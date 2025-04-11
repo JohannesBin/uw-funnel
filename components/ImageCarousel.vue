@@ -1,24 +1,33 @@
 <template>
   <div class="relative overflow-hidden border-brutalist">
-    <!-- Main image display -->
-    <img 
-      :src="images[currentSlide]" 
-      :alt="`UWM Studio bilde ${currentSlide + 1}`" 
-      class="w-full h-[400px] object-cover"
-    >
+    <!-- Carousel with transition -->
+    <div class="relative w-full h-[400px]">
+      <transition-group name="slide" tag="div" class="h-full">
+        <img 
+          v-for="(src, index) in images" 
+          :key="src"
+          v-show="index === currentSlide"
+          :src="src" 
+          :alt="`UWM Studio bilde ${index + 1}`" 
+          class="absolute top-0 left-0 w-full h-full object-cover"
+        >
+      </transition-group>
+    </div>
     
     <!-- Navigation arrows - larger and more visible -->
     <button 
       type="button"
-      @click.prevent="prevSlide" 
-      class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-4 border-2 border-black text-black hover:bg-gray-100 cursor-pointer"
+      @click="prevSlide" 
+      class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-4 border-2 border-black text-black hover:bg-gray-100 cursor-pointer transition-transform duration-150 active:scale-95"
+      aria-label="Previous image"
     >
       <span class="text-2xl font-bold">❮</span>
     </button>
     <button 
       type="button"
-      @click.prevent="nextSlide" 
-      class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-4 border-2 border-black text-black hover:bg-gray-100 cursor-pointer"
+      @click="nextSlide" 
+      class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-4 border-2 border-black text-black hover:bg-gray-100 cursor-pointer transition-transform duration-150 active:scale-95"
+      aria-label="Next image"
     >
       <span class="text-2xl font-bold">❯</span>
     </button>
@@ -35,7 +44,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-// All images from public/bilder
+// All images from public/bilder - preload images for faster display
 const images = [
   '/bilder/715_56516894-64c8-4454-915f-fb7bd26d8fa3.jpg.webp',
   '/bilder/715_e5ed3344-921c-42d9-8a08-e6831aadf041.jpg.webp',
@@ -50,16 +59,29 @@ const images = [
 const currentSlide = ref(0)
 const autoplayInterval = ref<null | number>(null)
 
-// Navigate to previous slide
+// Preload all images on component mount for instant display
+onMounted(() => {
+  images.forEach(src => {
+    const img = new Image()
+    img.src = src
+  })
+})
+
+// Navigate to previous slide - optimized with debounce
+let isTransitioning = false
 const prevSlide = () => {
-  console.log('Previous slide clicked')
+  if (isTransitioning) return
+  isTransitioning = true
   currentSlide.value = (currentSlide.value === 0) ? images.length - 1 : currentSlide.value - 1
+  setTimeout(() => { isTransitioning = false }, 200) // Prevent rapid clicks
 }
 
-// Navigate to next slide
+// Navigate to next slide - optimized with debounce
 const nextSlide = () => {
-  console.log('Next slide clicked')
+  if (isTransitioning) return
+  isTransitioning = true
   currentSlide.value = (currentSlide.value === images.length - 1) ? 0 : currentSlide.value + 1
+  setTimeout(() => { isTransitioning = false }, 200) // Prevent rapid clicks
 }
 
 // Setup autoplay (commented out to avoid auto-changing)
@@ -75,4 +97,19 @@ const nextSlide = () => {
 //     clearInterval(autoplayInterval.value)
 //   }
 // })
-</script> 
+</script>
+
+<style scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.2s ease;
+}
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+</style> 

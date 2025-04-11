@@ -14,7 +14,19 @@
           </p>
         </div>
 
-        <form @submit.prevent="handleSubmit" class="space-y-6">
+        <form 
+          name="uwm-partner-contact" 
+          method="POST" 
+          data-netlify="true" 
+          netlify-honeypot="bot-field"
+          @submit.prevent="handleSubmit" 
+          class="space-y-6"
+        >
+          <input type="hidden" name="form-name" value="uwm-partner-contact" />
+          <p class="hidden">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+
           <!-- Personlig info -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -22,6 +34,7 @@
               <input
                 type="text"
                 id="name"
+                name="name"
                 v-model="form.name"
                 required
                 class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none"
@@ -34,6 +47,7 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 v-model="form.email"
                 required
                 class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none"
@@ -47,6 +61,7 @@
             <input
               type="tel"
               id="phone"
+              name="phone"
               v-model="form.phone"
               required
               class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none"
@@ -61,6 +76,7 @@
               <input
                 type="number"
                 id="squareMeters"
+                name="squareMeters"
                 v-model="form.squareMeters"
                 required
                 class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none"
@@ -73,6 +89,7 @@
               <input
                 type="number"
                 id="budget"
+                name="budget"
                 v-model="form.budget"
                 required
                 class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none"
@@ -85,6 +102,7 @@
             <label for="investmentInterest" class="block text-lg font-bold uppercase mb-2">INTERESSERT I INVESTERING?</label>
             <select
               id="investmentInterest"
+              name="investmentInterest"
               v-model="form.investmentInterest"
               class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none appearance-none"
             >
@@ -99,6 +117,7 @@
             <label for="message" class="block text-lg font-bold uppercase mb-2">FORTELL OM DEG/DERE</label>
             <textarea
               id="message"
+              name="message"
               v-model="form.message"
               rows="4"
               required
@@ -142,10 +161,34 @@ const handleSubmit = async () => {
   isSubmitting.value = true
   
   try {
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', form)
+    // Using Netlify Forms - let the native form submission handle it
+    // The form will submit normally and Netlify will capture it
+    
+    // Create form data
+    const formData = new FormData()
+    formData.append('name', form.name)
+    formData.append('email', form.email)
+    formData.append('phone', form.phone)
+    formData.append('squareMeters', form.squareMeters.toString())
+    formData.append('budget', form.budget.toString())
+    formData.append('investmentInterest', form.investmentInterest)
+    formData.append('message', form.message)
+    
+    // Additional form handling if needed (for SPA functionality)
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString()
+    })
+    
     // Reset form after successful submission
-    Object.keys(form).forEach(key => form[key] = '')
+    Object.keys(form).forEach(key => {
+      if (key in form) {
+        (form as any)[key] = ''
+      }
+    })
+    
+    // Show success message
     alert('TAKK FOR DIN INTERESSE! VI KONTAKTER DEG SNART.')
   } catch (error) {
     console.error('Error submitting form:', error)

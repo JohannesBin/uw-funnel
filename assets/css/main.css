@@ -6,13 +6,20 @@
   html {
     @apply antialiased;
     font-family: 'Druk', 'Inter', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     @apply bg-white text-black;
+    overscroll-behavior: none;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-black tracking-tighter uppercase;
     font-family: 'Druk', 'Inter', system-ui, sans-serif;
+  }
+  input, select, textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
   }
 }
 
@@ -37,5 +44,38 @@
   }
   .border-brutalist {
     @apply border-4 border-black;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Base font size for mobile */
+  }
+  
+  h1, h2 {
+    font-size: 2.5rem !important; /* Ensure headings are readable */
+    line-height: 1.1 !important;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  input, select, textarea, button {
+    font-size: 16px !important; /* Prevent iOS zoom on input focus */
+  }
+  
+  /* Improve tap target sizes for mobile */
+  .btn, button {
+    min-height: 44px;
+  }
+  
+  /* Fix scrolling */
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
   }
 } 

@@ -33,6 +33,7 @@
         <form 
           name="uwm-partner-contact" 
           method="POST"
+          data-netlify="true"
           @submit.prevent="handleSubmit" 
           class="space-y-6"
         >
@@ -175,8 +176,8 @@ const handleSubmit = async (event: Event) => {
   isSubmitting.value = true
   
   try {
-    const form = event.target as HTMLFormElement
-    const formData = new FormData(form)
+    const formElement = event.target as HTMLFormElement
+    const formData = new FormData(formElement)
     
     await fetch('/', {
       method: 'POST',
@@ -184,12 +185,14 @@ const handleSubmit = async (event: Event) => {
       body: new URLSearchParams(formData as any).toString()
     })
     
-    // Reset form values
-    Object.keys(form).forEach(key => {
-      if (key in form) {
-        (form as any)[key] = ''
-      }
-    })
+    // Reset form values using type-safe approach
+    form.name = ''
+    form.email = ''
+    form.phone = ''
+    form.squareMeters = ''
+    form.budget = ''
+    form.investmentInterest = ''
+    form.message = ''
     
     alert('TAKK FOR DIN INTERESSE! VI KONTAKTER DEG SNART.')
   } catch (error) {

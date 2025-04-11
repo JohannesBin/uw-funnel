@@ -8,22 +8,6 @@ export default defineNuxtConfig({
       hmr: {
         overlay: false
       }
-    },
-    build: {
-      cssCodeSplit: false, // Ensure CSS is bundled into one file
-      rollupOptions: {
-        output: {
-          manualChunks: undefined // Prevents code splitting
-        }
-      }
-    }
-  },
-
-  // Force a consistent build for production
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      failOnError: false
     }
   },
 
@@ -62,9 +46,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-
-  ssr: true, // Ensure server-side rendering is enabled
-  components: false, // Disable auto-imports to ensure explicit component order
 
   compatibilityDate: '2025-04-11'
 })

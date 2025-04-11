@@ -1,16 +1,12 @@
 <template>
   <div class="min-h-screen bg-white text-black">
-    <ClientOnly>
-      <DynamicMeta />
-    </ClientOnly>
+    <DynamicMeta />
     <Navbar />
-    <main>
-      <Hero />
-      <StudiosVision />
-      <Studios />
-      <AboutFounders />
-      <Contact />
-    </main>
+    <Hero />
+    <StudiosVision />
+    <Studios />
+    <AboutFounders />
+    <Contact />
     <Footer />
   </div>
 </template>

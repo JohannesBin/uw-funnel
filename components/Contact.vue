@@ -14,26 +14,12 @@
           </p>
         </div>
 
-        <!-- Hidden static HTML form that Netlify can find during build -->
-        <form name="uwm-partner-contact" netlify netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <input type="number" name="squareMeters" />
-          <input type="number" name="budget" />
-          <select name="investmentInterest">
-            <option value="yes">Ja</option>
-            <option value="maybe">Kanskje</option>
-            <option value="no">Nei</option>
-          </select>
-          <textarea name="message"></textarea>
-        </form>
-
-        <!-- Actual form that users interact with -->
+        <!-- Form with Netlify attribute that will definitely be detected -->
         <form 
           name="uwm-partner-contact" 
           method="POST"
-          data-netlify="true"
+          netlify
+          netlify-honeypot="bot-field"
           @submit.prevent="handleSubmit" 
           class="space-y-6"
         >
@@ -185,7 +171,7 @@ const handleSubmit = async (event: Event) => {
       body: new URLSearchParams(formData as any).toString()
     })
     
-    // Reset form values using type-safe approach
+    // Reset form values
     form.name = ''
     form.email = ''
     form.phone = ''

@@ -108,9 +108,9 @@
               class="w-full px-4 py-3 bg-white border-2 border-black text-lg focus:border-4 focus:outline-none appearance-none"
             >
               <option value="">Velg alternativ</option>
-              <option value="yes">Ja, interessert i å betale 1 år forskudd</option>
-              <option value="maybe">Kanskje, trenger mer info</option>
-              <option value="no">Nei, ikke interessert</option>
+              <option value="Ja, interessert i å betale 1 år forskudd">Ja, interessert i å betale 1 år forskudd</option>
+              <option value="Kanskje, trenger mer info">Kanskje, trenger mer info</option>
+              <option value="Nei, ikke interessert">Nei, ikke interessert</option>
             </select>
           </div>
 

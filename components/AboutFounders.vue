@@ -63,7 +63,7 @@
           </div>
           
           <div class="text-center mt-8">
-            <a href="#contact" class="inline-block btn btn-primary text-lg py-4 px-10">BLI EN AV DE FIRE FØRSTE</a>
+            <a href="#contact" class="inline-block text-lg py-4 px-10 text-white font-bold uppercase hover:text-gray-300 transition-colors">BLI EN AV DE FIRE FØRSTE</a>
           </div>
         </div>
       </div>

@@ -14,20 +14,11 @@
           </p>
         </div>
 
-        <!-- Form with Netlify attribute that will definitely be detected -->
+        <!-- Form with EmailJS -->
         <form 
-          name="uwm-partner-contact" 
-          method="POST"
-          netlify
-          netlify-honeypot="bot-field"
-          @submit.prevent="handleSubmit" 
+          @submit.prevent="sendEmail" 
           class="space-y-6"
         >
-          <input type="hidden" name="form-name" value="uwm-partner-contact" />
-          <p class="hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
-
           <!-- Personlig info -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -145,7 +136,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
+import emailjs from '@emailjs/browser'
+
+// Initialize EmailJS 
+onMounted(() => {
+  emailjs.init("yLnGriuJANa3G6DAe") // Your public key
+})
 
 const isSubmitting = ref(false)
 const form = reactive({
@@ -158,18 +155,21 @@ const form = reactive({
   message: ''
 })
 
-const handleSubmit = async (event: Event) => {
+const sendEmail = async () => {
   isSubmitting.value = true
   
   try {
-    const formElement = event.target as HTMLFormElement
-    const formData = new FormData(formElement)
+    // Add current year for email template
+    const templateParams = {
+      ...form,
+      year: new Date().getFullYear()
+    }
     
-    await fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString()
-    })
+    await emailjs.send(
+      "service_d5vmsdg", // Your service ID
+      "template_uwm_partner", // You'll need to create this template ID in EmailJS dashboard
+      templateParams
+    )
     
     // Reset form values
     form.name = ''

@@ -9,7 +9,7 @@
           </h1>
           <p class="text-xl md:text-2xl mb-6 uppercase font-bold">
             KONGENS GATE 14, OSLO<br>
-            JUNI 2024
+            JUNI 2025
           </p>
           <div class="mb-6 border-t-4 border-black pt-4">
             <p class="text-lg mb-2"><span class="text-xl font-bold">FØRSTEKLASSES FASILITETER</span></p>
@@ -30,13 +30,13 @@
         <div>
           <div class="mb-4 border-brutalist p-0">
             <div class="bg-black text-white p-4 font-black uppercase text-lg text-center border-b-4 border-black">
-              LOKALENE I DAG - SLIK SER DE UT STRIPPET
+              LOKALET I DAG - SLIK SER DET UT STRIPPET
             </div>
             <ImageCarousel />
           </div>
           <div class="bg-black text-white p-4 border-4 border-black">
             <p class="font-bold text-center text-sm">
-              BILDENE VISER LOKALENE FØR RENOVERING. STUDIOENE VIL BLI BYGGET ETTER HØYESTE STANDARD.
+              BILDENE VISER LOKALET FØR RENOVERING. STUDIOENE VIL BLI BYGGET ETTER HØYESTE STANDARD.
             </p>
           </div>
         </div>

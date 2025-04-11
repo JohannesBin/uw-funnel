@@ -19,7 +19,7 @@
           
           <div>
             <h3 class="text-2xl uppercase font-bold mb-8 border-b-4 border-black pb-4">ÅPNING</h3>
-            <p class="text-xl uppercase font-bold">JUNI 2024</p>
+            <p class="text-xl uppercase font-bold">JUNI 2025</p>
           </div>
         </div>
         <div class="mt-16 pt-8 border-t-4 border-black text-center">

@@ -4,7 +4,9 @@
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <h2 class="text-5xl font-black uppercase mb-8">UWM</h2>
+            <div class="mb-8">
+              <img src="/logo-brutalist.svg" alt="UWM Logo" class="h-16" />
+            </div>
             <p class="text-xl uppercase font-bold mb-4">KONGENS GATE 14</p>
             <p class="text-xl uppercase font-bold">OSLO, NORGE</p>
           </div>

@@ -1,0 +1,23 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- UWM Text-Based Logo matching the navbar -->
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&amp;display=swap');
+    .logo-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+  </style>
+  
+  <!-- White Background -->
+  <rect width="120" height="60" fill="white"/>
+  
+  <!-- Optional Border -->
+  <rect width="120" height="60" fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- UWM Text -->
+  <text x="60" y="40" class="logo-text" text-anchor="middle" fill="black">UWM</text>
+</svg> 

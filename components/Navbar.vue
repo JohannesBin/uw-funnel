@@ -3,7 +3,9 @@
     <div class="border-b-4 border-black">
       <div class="container py-6">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-4xl font-black tracking-tighter uppercase">UWM</a>
+          <a href="/" class="flex items-center">
+            <img src="/logo-brutalist.svg" alt="UWM Logo" class="h-10" />
+          </a>
           
           <nav class="hidden md:flex space-x-8 items-center">
             <a href="#studios" class="text-lg font-bold uppercase hover:text-gray-600 transition-colors">Studioer</a>

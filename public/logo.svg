@@ -1,0 +1,18 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- UWM Text Logo with Brutalist Style -->
+  
+  <!-- Background (optional, can be removed) -->
+  <rect width="120" height="60" fill="white" />
+  
+  <!-- U Letter -->
+  <path d="M16,12 L16,34 C16,37.3137 18.6863,40 22,40 L28,40 C31.3137,40 34,37.3137 34,34 L34,12 L27,12 L27,34 C27,33.4477 23,33.4477 23,34 L23,12 L16,12 Z" fill="black"/>
+  
+  <!-- W Letter -->
+  <path d="M40,12 L48,40 L54,40 L60,21 L66,40 L72,40 L80,12 L73,12 L69,30 L63,12 L57,12 L51,30 L47,12 L40,12 Z" fill="black"/>
+  
+  <!-- M Letter -->
+  <path d="M86,12 L86,40 L93,40 L93,20 L100,32 L107,20 L107,40 L114,40 L114,12 L107,12 L100,24 L93,12 L86,12 Z" fill="black"/>
+  
+  <!-- Optional Border -->
+  <rect x="4" y="4" width="112" height="52" stroke="black" stroke-width="2" fill="none"/>
+</svg> 

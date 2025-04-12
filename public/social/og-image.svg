@@ -1,28 +1,61 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="white"/>
-  
-  <!-- Border -->
-  <rect x="20" y="20" width="1160" height="590" fill="white" stroke="black" stroke-width="8"/>
-  
-  <!-- Title -->
-  <text x="70" y="200" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="96" font-weight="900" text-transform="uppercase">
-    12 PREMIUM
-  </text>
-  <text x="70" y="300" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="96" font-weight="900" text-transform="uppercase">
-    STUDIOER
-  </text>
-  
-  <!-- Info -->
-  <text x="70" y="400" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="700" text-transform="uppercase">
-    KONGENS GATE 14, OSLO
-  </text>
-  <text x="70" y="460" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="700" text-transform="uppercase">
-    JUNI 2025
-  </text>
-  
-  <!-- Logo -->
-  <text x="1100" y="550" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="900" text-transform="uppercase" text-anchor="end">
-    UWM
-  </text>
-</svg> 
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1200 630">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke-miterlimit: 3.2;
+        stroke-width: 8px;
+      }
+
+      .st0, .st1, .st2 {
+        stroke: #000;
+      }
+
+      .st3 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .st3, .st4 {
+        isolation: isolate;
+      }
+
+      .st5, .st1, .st2 {
+        fill: #fff;
+      }
+
+      .st1 {
+        stroke-width: 4px;
+      }
+
+      .st2 {
+        stroke-width: 8px;
+      }
+
+      .st4 {
+        font-family: Arial-Black, 'Arial Black';
+        font-size: 96px;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <rect class="st5" width="1200" height="630"/>
+  <rect class="st2" x="20" y="20" width="1160" height="590"/>
+  <text class="st4" transform="translate(70 200)"><tspan x="0" y="0">12 PREMIUM</tspan></text>
+  <text class="st4" transform="translate(70 300)"><tspan x="0" y="0">STUDIOER</tspan></text>
+  <text class="st3" transform="translate(70 400)"><tspan x="0" y="0">KONGENS GATE 14, OSLO</tspan></text>
+  <text class="st3" transform="translate(70 460)"><tspan x="0" y="0">JUNI 2025</tspan></text>
+  <g>
+    <rect class="st0" x="950" y="480" width="160" height="64"/>
+    <path d="M972.2,492v28c0,5.6,4,12,12,12h8c8,0,12-6.4,12-12v-28h-12v31l-8-3v-28s-12,0-12,0Z"/>
+    <path d="M1004.2,492l8,40h8l8-24,8,24h8l8-40h-12l-4,20-8-20h-8l-8,20-4-20h-4Z"/>
+    <path d="M1052.2,492v40h12v-20l4,8,4-8v20h12v-40h-12l-4,12-4-12h-12Z"/>
+  </g>
+  <rect class="st1" x="928.4" y="472" width="200" height="80"/>
+  <path d="M956.2,487v35c0,7,5,15,15,15h10c10,0,15-8,15-15v-35h-15v38.8l-10-3.8v-35h-15Z"/>
+  <path d="M996.2,487l10,50h10l10-30,10,30h10l10-50h-15l-5,25-10-25h-10l-10,25-5-25h-5Z"/>
+  <path d="M1056.2,487v50h15v-25l5,10,5-10v25h15v-50h-15l-5,15-5-15h-15Z"/>
+</svg>
